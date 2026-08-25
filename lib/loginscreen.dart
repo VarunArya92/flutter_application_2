@@ -4,7 +4,7 @@ import 'package:flutter_application_2/splashscreen.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class loginscreen extends StatefulWidget {
-  const new({super.key});
+  const loginscreen({super.key});
 
   @override
   State<loginscreen> createState() => _loginscreenState();

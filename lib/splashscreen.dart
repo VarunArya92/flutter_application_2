@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'loginscreen.dart';
 
 class splashscreenview extends StatefulWidget {
-  const new({super.key});
+  const splashscreenview({super.key});
 
   @override
   State<splashscreenview> createState() => _splashscreenviewState();
