@@ -51,6 +51,9 @@ class _loginscreenState extends State<loginscreen> {
             Padding(
               padding: EdgeInsetsGeometry.all(10),
               child: TextField(
+                onChanged: (value) {
+                  print("Check Upated Vallue: $value");
+                },
                 controller: userPasswordcontroller,
                 obscureText: true,
 
@@ -81,10 +84,16 @@ class _loginscreenState extends State<loginscreen> {
                 } else {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Outputscreen()),
+                    MaterialPageRoute(
+                      builder: (context) => Outputscreen(
+                        name: textofname,
+                        password: textofpassword,
+                      ),
+                    ),
                   );
                 }
               },
+
               child: Container(
                 child: Text(
                   "Login",

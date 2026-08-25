@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Outputscreen extends StatefulWidget {
-  const new({super.key});
+  String? name;
+  String? password;
+  Outputscreen({required this.name, required this.password, super.key});
 
   @override
   State<Outputscreen> createState() => _OutputscreenState();
@@ -12,12 +14,12 @@ class _OutputscreenState extends State<Outputscreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Container(
-          child: Column(
-            children: [
-              Row(children: [Text("Your Email Id =>")]),
-            ],
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Your Email Id => ${widget.name.toString()}"),
+            Text("Your Password => ${widget.password.toString()}"),
+          ],
         ),
       ),
     );
