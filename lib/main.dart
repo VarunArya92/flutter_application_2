@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/bottomnav.dart';
+import 'package:flutter_application_2/Signup.dart';
+import 'package:flutter_application_2/forgetscreen.dart';
+import 'package:flutter_application_2/otpscreren.dart';
 
 import 'splashscreen.dart';
 import 'loginscreen.dart';
@@ -13,7 +17,10 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: splashscreenview(),
+      // home: forgetpasswordscreen(),
+      // home: loginscreen(),
+      // home: forgetpasswordscreen(),/////
+      home: loginscreen(),
       debugShowCheckedModeBanner: false,
     );
   }

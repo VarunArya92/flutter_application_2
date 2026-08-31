@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/Signup.dart';
+import 'package:flutter_application_2/forgetscreen.dart';
 import 'package:flutter_application_2/output.dart';
 import 'package:flutter_application_2/splashscreen.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 class loginscreen extends StatefulWidget {
   const loginscreen({super.key});
@@ -53,6 +54,16 @@ class _loginscreenState extends State<loginscreen> {
               child: TextField(
                 onChanged: (value) {
                   print("Check Upated Vallue: $value");
+                  if (value.length < 8) {
+                    decoration:
+                    InputDecoration(
+                      labelText: 'Enter your Password',
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(width: 10),
+                        borderRadius: BorderRadius.circular(50.0),
+                      ),
+                    );
+                  }
                 },
                 controller: userPasswordcontroller,
                 obscureText: true,
@@ -66,21 +77,39 @@ class _loginscreenState extends State<loginscreen> {
                 ),
               ),
             ),
-
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => forgetpasswordscreen(),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    "Forget Password ?",
+                    style: TextStyle(color: Colors.blue),
+                  ),
+                ),
+              ],
+            ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(backgroundColor: Colors.amber),
               onPressed: () {
                 String textofname = usernamecontroller.text;
                 String textofpassword = userPasswordcontroller.text;
                 if (textofname.isEmpty && textofpassword.isEmpty) {
-                  Fluttertoast.showToast(
-                    msg: 'Please Fill Login Details',
-                    toastLength: Toast.LENGTH_LONG,
-                    backgroundColor: Colors.amber,
-                    textColor: Colors.black,
-                    gravity: ToastGravity.CENTER,
-                    timeInSecForIosWeb: 2,
-                  );
+                  // Fluttertoast.showToast(
+                  //   msg: 'Please Fill Login Details',
+                  //   toastLength: Toast.LENGTH_LONG,
+                  //   backgroundColor: Colors.amber,
+                  //   textColor: Colors.black,
+                  //   gravity: ToastGravity.CENTER,
+                  //   timeInSecForIosWeb: 2,
+                  // );
                 } else {
                   Navigator.push(
                     context,
@@ -102,6 +131,34 @@ class _loginscreenState extends State<loginscreen> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+              ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Don't Have a Account",
+                    style: TextStyle(color: Colors.black),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Signupscreen()),
+                      );
+                    },
+                    child: Text(
+                      "Signup",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.red,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
