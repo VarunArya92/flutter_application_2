@@ -34,10 +34,14 @@ class _bottomnavscreenState extends State<bottomnavscreen> {
       appBar: AppBar(title: Text("bootom bar")),
       body: indexList[index],
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: index,
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.grey,
+
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.house), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Setting"),
         ],
         onTap: indexvalue,
       ),
