@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_2/bottomnav.dart';
 import 'package:flutter_application_2/Signup.dart';
 import 'package:flutter_application_2/customdialog.dart';
+import 'package:flutter_application_2/dialogform.dart';
 import 'package:flutter_application_2/dialogscreen.dart';
 import 'package:flutter_application_2/forgetscreen.dart';
 import 'package:flutter_application_2/otpscreren.dart';
@@ -24,7 +25,8 @@ class MainApp extends StatelessWidget {
       // home: forgetpasswordscreen(),/////
       // home: bottomnavscreen(),
       // home: dialogscreens(),
-      home: Customdialogscreen(),
+      // home: Customdialogscreen(),
+      home: Dialogformscreen(),
 
       debugShowCheckedModeBanner: false,
     );
