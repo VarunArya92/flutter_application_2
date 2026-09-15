@@ -5,6 +5,8 @@ import 'package:flutter_application_2/customdialog.dart';
 import 'package:flutter_application_2/dialogform.dart';
 import 'package:flutter_application_2/dialogscreen.dart';
 import 'package:flutter_application_2/forgetscreen.dart';
+import 'package:flutter_application_2/lifecle.dart';
+import 'package:flutter_application_2/listviewscreen.dart';
 import 'package:flutter_application_2/otpscreren.dart';
 
 import 'splashscreen.dart';
@@ -26,7 +28,9 @@ class MainApp extends StatelessWidget {
       // home: bottomnavscreen(),
       // home: dialogscreens(),
       // home: Customdialogscreen(),
-      home: Dialogformscreen(),
+      // home: Dialogformscreen(),
+      // home: lifecyclescreen(),
+      home: Listviewsceen(),
 
       debugShowCheckedModeBanner: false,
     );
