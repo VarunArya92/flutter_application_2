@@ -4,6 +4,7 @@ import 'package:flutter_application_2/Signup.dart';
 import 'package:flutter_application_2/customdialog.dart';
 import 'package:flutter_application_2/dialogform.dart';
 import 'package:flutter_application_2/dialogscreen.dart';
+import 'package:flutter_application_2/editordeletelistviewscree.dart';
 import 'package:flutter_application_2/forgetscreen.dart';
 import 'package:flutter_application_2/lifecle.dart';
 import 'package:flutter_application_2/listviewscreen.dart';
@@ -30,7 +31,8 @@ class MainApp extends StatelessWidget {
       // home: Customdialogscreen(),
       // home: Dialogformscreen(),
       // home: lifecyclescreen(),
-      home: Listviewsceen(),
+      // home: Listviewsceen(),
+      home: editordeletelistviewscreen(),
 
       debugShowCheckedModeBanner: false,
     );
