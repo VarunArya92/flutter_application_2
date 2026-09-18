@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/bottomnav.dart';
 import 'package:flutter_application_2/Signup.dart';
+import 'package:flutter_application_2/classtaskwithlistview.dart';
 import 'package:flutter_application_2/customdialog.dart';
 import 'package:flutter_application_2/dialogform.dart';
 import 'package:flutter_application_2/dialogscreen.dart';
 import 'package:flutter_application_2/editordeletelistviewscree.dart';
 import 'package:flutter_application_2/forgetscreen.dart';
 import 'package:flutter_application_2/lifecle.dart';
+import 'package:flutter_application_2/listtask.dart';
 import 'package:flutter_application_2/listviewscreen.dart';
 import 'package:flutter_application_2/otpscreren.dart';
 
@@ -32,7 +34,9 @@ class MainApp extends StatelessWidget {
       // home: Dialogformscreen(),
       // home: lifecyclescreen(),
       // home: Listviewsceen(),
-      home: editordeletelistviewscreen(),
+      // home: editordeletelistviewscreen(),
+      // home: Listtaskscreen(),
+      home: Classtaskwithlistviewscreen(),
 
       debugShowCheckedModeBanner: false,
     );

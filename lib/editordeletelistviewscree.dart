@@ -14,12 +14,18 @@ class _editordeletelistviewscreenState
   TextEditingController Addusername = TextEditingController();
 
   // String Textofaddusername=Addusername.toString();
-  void showfloatactionbuttondialog(context) {
+  void showfloatactionbuttondialog(context, int index) {
     // TextEditingController Addusername = TextEditingController();
     // String Textofaddusername=Addusername.toString();
+
     showDialog(
       context: context,
-      builder: (index) {
+      builder: (context) {
+        if (index > -1) {
+          Addusername.text = checkdata[index].toString();
+        } else {
+          Addusername.clear();
+        }
         return Dialog(
           backgroundColor: Colors.indigo.shade100,
           child: Padding(
@@ -29,7 +35,7 @@ class _editordeletelistviewscreenState
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  "Add Username",
+                  index > -1 ? "Update Username" : "Add Username",
                   style: TextStyle(
                     color: Colors.indigo,
                     fontWeight: FontWeight.bold,
@@ -68,10 +74,19 @@ class _editordeletelistviewscreenState
                         )),
                       );
                     } else {
-                      setState(() {
-                        checkdata.add(Addusername.text);
-                        Navigator.pop(context);
-                      });
+                      if (index > -1) {
+                        setState(() {
+                          checkdata[index] = Addusername.text.toString();
+                          Addusername.clear();
+                          Navigator.pop(context);
+                        });
+                      } else {
+                        setState(() {
+                          checkdata.add(Addusername.text);
+                          Addusername.clear();
+                          Navigator.pop(context);
+                        });
+                      }
                     }
                     // checkdata = Addusername.toString();
                   },
@@ -131,14 +146,22 @@ class _editordeletelistviewscreenState
 
                   child: Row(
                     children: [
-                      Icon(Icons.edit),
+                      IconButton(
+                        onPressed: () {
+                          showfloatactionbuttondialog(context, index);
+                          // checkdata[index] = Addusername.text.toString();
+                        },
+                        icon: Icon(Icons.edit),
+                      ),
                       SizedBox(width: 30),
-                      // IconButton(
-                      //   onPressed: () {
-                      //     checkdata.remove(Addusername.text);
-                      //   },
-                      //   icon: Icon(Icons.delete),
-                      // ),
+                      IconButton(
+                        onPressed: () {
+                          setState(() {
+                            checkdata.removeAt(index);
+                          });
+                        },
+                        icon: Icon(Icons.delete),
+                      ),
                     ],
                   ),
                 ),
@@ -150,7 +173,7 @@ class _editordeletelistviewscreenState
 
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          showfloatactionbuttondialog(context);
+          showfloatactionbuttondialog(context, -1);
         },
         backgroundColor: Colors.indigo,
         child: Icon(Icons.add, color: Colors.white),
